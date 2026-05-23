@@ -15,7 +15,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
-    print("state is renderimg");
+    print("state is rendering");
     return Scaffold(
 
       body: screens[currentPageIndex],
