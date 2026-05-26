@@ -6,14 +6,14 @@ class RoutineScreen extends StatelessWidget {
     {
       "routineName": "Morning Yoga",
       "category": "Mindfullness",
-      "time": "07:00",
+      "time": "08:30",
       "12-hour": "AM",
       "iscompleted": true,
     },
     {
       "routineName": "Healthy Breakfast",
       "category": "Health",
-      "time": "08:30",
+      "time": "07:00",
       "12-hour": "AM",
       "iscompleted": true,
     },
@@ -92,7 +92,7 @@ class RoutineScreen extends StatelessWidget {
                             letterSpacing: 0.25,
                           ),
                         ),
-        
+
                         Text(
                           "4 to 6 tasks completed",
                           style: TextStyle(
@@ -129,21 +129,23 @@ class RoutineScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Align(
               alignment: Alignment.topCenter,
               child: SizedBox(
-                width: 358,
-                height: 390,
+                width: 390,
+                height: 380,
                 child: ListView.separated(
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
                     return SizedBox(
                       width: 300,
-                      height: 83,
+                      height: 80,
                       child: ListTile(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                         trailing: Checkbox(
-                          // checkColor: Color(0xff006A63),
                           value: routineDetails[index]["iscompleted"],
                           onChanged: (value) {},
                         ),
@@ -173,10 +175,29 @@ class RoutineScreen extends StatelessWidget {
                         title: Row(
                           children: [
                             VerticalDivider(),
-                            Text(routineDetails[index]["routineName"]),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    routineDetails[index]["routineName"],
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  Text(
+                                    routineDetails[index]["category"],
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: "Inter",
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
-                        subtitle: Text(routineDetails[index]["category"]),
+                        // subtitle: Text(routineDetails[index]["category"]),
                       ),
                     );
                   },
@@ -187,20 +208,28 @@ class RoutineScreen extends StatelessWidget {
                 ),
               ),
             ),
-        
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 161,
-                  width: 173,
+                  width: 195,
                   child: Card(
                     child: Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.trending_up, color: Color(0xff003F74)),
-                          Text("7 Day Streak"),
+                          Text(
+                            "7 Day Streak",
+                            style: TextStyle(
+                              fontFamily: "Inter",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                              letterSpacing: 0.1,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -208,7 +237,7 @@ class RoutineScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 161,
-                  width: 173,
+                  width: 195,
                   child: Card(
                     child: Center(
                       child: Column(
@@ -218,7 +247,15 @@ class RoutineScreen extends StatelessWidget {
                             Icons.workspace_premium_outlined,
                             color: Color(0xff573700),
                           ),
-                          Text("3 Achievments", style: TextStyle()),
+                          Text(
+                            "3 Achievments",
+                            style: TextStyle(
+                              fontFamily: "Inter",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                              letterSpacing: 0.1,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -230,8 +267,12 @@ class RoutineScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 350),
-                  child: Icon(Icons.add_circle,size: 56,color: Color(0xff003F74),),
-                )
+                  child: Icon(
+                    Icons.add_circle,
+                    size: 56,
+                    color: Color(0xff003F74),
+                  ),
+                ),
               ],
             ),
           ],
