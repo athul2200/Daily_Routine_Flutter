@@ -92,7 +92,7 @@ class RoutineScreen extends StatelessWidget {
                             letterSpacing: 0.25,
                           ),
                         ),
-
+        
                         Text(
                           "4 to 6 tasks completed",
                           style: TextStyle(
@@ -134,7 +134,7 @@ class RoutineScreen extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: SizedBox(
                 width: 358,
-                height: 450,
+                height: 390,
                 child: ListView.separated(
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
@@ -187,6 +187,7 @@ class RoutineScreen extends StatelessWidget {
                 ),
               ),
             ),
+        
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -213,13 +214,24 @@ class RoutineScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.workspace_premium_outlined, color: Color(0xff573700)),
-                          Text("3 Achievments",style: TextStyle(),),
+                          Icon(
+                            Icons.workspace_premium_outlined,
+                            color: Color(0xff573700),
+                          ),
+                          Text("3 Achievments", style: TextStyle()),
                         ],
                       ),
                     ),
                   ),
                 ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 350),
+                  child: Icon(Icons.add_circle,size: 56,color: Color(0xff003F74),),
+                )
               ],
             ),
           ],
